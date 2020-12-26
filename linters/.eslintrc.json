@@ -1,0 +1,41 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "shared-node-browser": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "globals": {},
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "react-hooks"],
+  "rules": {
+    "no-unused-vars": [1, { "argsIgnorePattern": "res|next|^err|event" }],
+    "global-require": 0,
+    "no-plusplus": 0,
+    "no-console": 1,
+    "no-nested-ternary": 0,
+    "no-underscore-dangle": ["error", { "allow": ["_id"] }],
+    "import/prefer-default-export": 0,
+    "react/jsx-filename-extension": 0,
+    "react/prefer-stateless-function": 0,
+    "react/require-default-props": 0,
+    "react/no-multi-comp": 0,
+    "react/destructuring-assignment": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}
