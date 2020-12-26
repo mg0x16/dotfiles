@@ -1,0 +1,15 @@
+configuration {
+  modi: "combi,run,ssh";
+  lines: 20;
+  combi-modi: "window,drun";
+  combi-hide-mode-prefix: true;
+  theme: "Monokai";
+  show-icons: true;
+  font: "FuraCode Nerd Font 14";
+  kb-row-up: "Up,Control+k,ISO_Left_Tab";
+  kb-row-down: "Down,Control+j";
+  kb-accept-entry: "Control+m,Return,KP_Enter";
+  kb-remove-to-eol: "";
+}
+
+/* vim:ft=css */
