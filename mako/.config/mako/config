@@ -1,0 +1,9 @@
+font="FuraCode Nerd Font" 12
+margin=6
+padding=16
+background-color=#000000DC
+text-color=#eeeeee
+border-color=#222222EE
+border-size=1
+border-radius=8
+default-timeout=6000
