@@ -1,0 +1,220 @@
+# #--------------------------# #
+# #--- General Setting ------# #
+# #--------------------------# #
+# xwayland disable
+set $mod Mod4
+set $alt Mod1
+
+# Windows Border
+default_border pixel 1
+default_floating_border pixel 0
+
+# Leave fullscreen when popup appears
+popup_during_fullscreen leave_fullscreen
+
+# Delaying urgency hint reset on workspace change
+force_display_urgency_hint 500 ms
+
+# Automatic back-and-forth when switching to the current workspace
+workspace_auto_back_and_forth no
+
+# Focus on window activation
+focus_on_window_activation urgent
+
+# Constraining floating window size
+floating_minimum_size -1 x -1
+floating_maximum_size -1 x -1
+
+# Use Mouse+$mod to drag/resize floating windows
+floating_modifier $mod normal
+
+# Set font
+font pango:FuraCode Nerd Font 11
+
+# Gaps
+gaps outer 5
+gaps inner 10
+smart_gaps on
+smart_borders no_gaps
+
+# #--------------------------# #
+# #--- Variables ------------# #
+# #--------------------------# #
+set $resize_width 10
+set $resize_height 10
+
+# Applications
+set $term kitty
+set $screenshot_fullscreen grim $(xdg-user-dir PICTURES)/screenshots/$(date +'%F-%T.png')
+set $screenshot_region grim -g "$(slurp)" $(xdg-user-dir PICTURES)/screenshots/$(date +'%F-%T.png')
+
+# #--------------------------# #
+# #--- Input ----------------# #
+# #--------------------------# #
+input "2385:5815:Kingston_HyperX_Alloy_FPS_Mechanical_Gaming_Keyboard" {
+    xkb_layout us,ara
+    xkb_options grp:alt_shift_toggle
+}
+
+# Hide mouse cursor
+seat * hide_cursor 8000
+
+# #--------------------------# #
+# #--- Output -----------# #
+# #--------------------------# #
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+# Read `man 5 sway-output` for more information about this section.
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# output VGA-2 disable
+output HDMI-A-1 {
+  pos 0 0
+  mode 2560x1440@143.912003Hz
+  bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+}
+
+# #--------------------------# #
+# #--- Autostart ------------# #
+# #--------------------------# #
+# Notification Daemon
+exec "mako"
+
+# Desktop Bar
+exec "waybar"
+
+# #--------------------------# #
+# #--- Workspaces -----------# #
+# #--------------------------# #
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
+set $ws10 "10"
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+Home workspace $ws1
+bindsym $mod+End workspace $ws10
+bindsym $mod+Tab workspace back_and_forth
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+Home move container to workspace $ws1
+bindsym $mod+Shift+End move container to workspace $ws10
+
+# #----------------# #
+# #--- Bindings ---# #
+# #----------------# #
+# Kill focused window
+bindsym $mod+q kill
+
+# New windows direction
+bindsym $mod+t split toggle
+bindsym $mod+apostrophe split horizontal ;; exec $term
+bindsym $mod+slash split vertical ;; exec $term
+
+# Toggle tiling/floating, Toggle tiling/floating focus
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# Sticky floating windows
+bindsym $mod+s sticky toggle
+
+# Fullscreen
+bindsym $mod+f fullscreen toggle
+
+# Jump to urgent window
+bindsym $mod+u [urgent=latest] focus
+
+# Focus the parent/child container
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move/Grap focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+bindsym $mod+minus scratchpad show
+
+# System
+bindsym $mod+Shift+Ctrl+Escape exec swaymsg exit
+bindsym $mod+Shift+Ctrl+r exec swaymsg reload
+
+# Apps
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+f exec --no-startup-id $FILE_MANAGER
+bindsym $mod+Shift+w exec --no-startup-id $WEB_BROWSER
+bindsym $mod+Shift+t exec --no-startup-id $TORRENT_CLIENT
+
+# Application launcher
+bindsym $mod+r exec rofi -show combi
+
+# Volume Control
+bindsym XF86AudioRaiseVolume exec $DEFAULT_VOLUME_INC
+bindsym XF86AudioLowerVolume exec $DEFAULT_VOLUME_DEC
+bindsym XF86AudioMute exec $DEFAULT_VOLUME_TOGGLE
+
+# Screenshot
+bindsym --release Print exec --no-startup-id $screenshot_fullscreen
+bindsym --release Shift+Print exec --no-startup-id $screenshot_region
+
+# #---------------------------------# #
+# #--- Custom Windows Properties ---# #
+# #---------------------------------# #
+# Float Applications
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="transmission-gtk"] floating enable
+for_window [class="xdman-Main"] floating enable
+
+# Set GTK settings
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Adwaita'
+    gsettings set $gnome-schema icon-theme 'Papirus'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
+}
+
+# vim:ft=i3config
