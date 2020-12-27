@@ -1,0 +1,102 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "FuraCode Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: #000000;
+  color: #ffffff;
+  transition-property: background, background-color;
+  transition-duration: 0.5s;
+}
+
+#clock,
+#backlight,
+#pulseaudio,
+#battery,
+#temperature,
+#memory,
+#cpu,
+#network,
+#mpd,
+#mode {
+  padding: 0 5px;
+  margin: 0 0 0 5px;
+  color: #ffffff;
+}
+
+/***** Tray *****/
+#tray {
+  padding: 0 4px 0 8px;
+}
+
+/***** Workspaces *****/
+#workspaces button {
+  padding: 2px 5px;
+  background: transparent;
+  color: #ffffff;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+}
+
+#workspaces button:hover {
+  text-shadow: inherit;
+}
+
+#workspaces button.focused {
+  background: #444444;
+  border-bottom: 3px solid #ffeb3b;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+/***** Memory *****/
+#memory {
+  border-bottom: 3px solid transparent;
+}
+
+#memory.critical {
+  border-bottom: 3px solid #f53c3c;
+}
+
+/***** CPU *****/
+#cpu {
+  border-bottom: 3px solid transparent;
+}
+
+#cpu.critical {
+  border-bottom: 3px solid #f53c3c;
+}
+
+/***** Temperature *****/
+#temperature {
+  border-bottom: 3px solid transparent;
+}
+
+#temperature.critical {
+  border-bottom: 3px solid #f53c3c;
+}
+
+/***** Network *****/
+#network {
+  border-bottom: 3px solid transparent;
+}
+
+#network.disconnected {
+  color: #444444;
+}
+
+/***** PulseAudio *****/
+#pulseaudio {
+  border-bottom: 3px solid transparent;
+}
+
+#pulseaudio.muted {
+  color: #444444;
+  border-bottom: 3px solid #f53c3c;
+}

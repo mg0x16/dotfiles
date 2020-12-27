@@ -57,7 +57,7 @@ input "2385:5815:Kingston_HyperX_Alloy_FPS_Mechanical_Gaming_Keyboard" {
 }
 
 # Hide mouse cursor
-seat * hide_cursor 8000
+seat * hide_cursor 60000
 
 # #--------------------------# #
 # #--- Output -----------# #

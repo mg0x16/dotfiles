@@ -1,0 +1,91 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["sway/workspaces"],
+  "modules-center": [],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "network",
+    "temperature",
+    "pulseaudio",
+    "clock",
+    "tray"
+  ],
+  "sway/workspaces": {
+    "all-outputs": true,
+    "disable-bar-scroll": true,
+    "format": "{name}"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 6
+  },
+  "clock": {
+    "interval": 60,
+    "format": " {:%a %e %b %I:%M %p}",
+    "format-alt": " {:%A %Y-%m-%d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "today-format": "<span fgcolor=\"#ff0000\"><b>{}</b></span>"
+  },
+  "cpu": {
+    "interval": 2,
+    "states": {
+      "critical": 80
+    },
+    "tooltip": true,
+    "format": " {usage}%"
+  },
+  "memory": {
+    "interval": 6,
+    "states": {
+      "critical": 85
+    },
+    "tooltip": true,
+    "format": " {percentage:2}%"
+  },
+  "temperature": {
+    "thermal-zone": 2,
+    "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+    "interval": 8,
+    "critical-threshold": 70,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", "", "", ""],
+    "format-critical": "<span fgcolor=\"#f53c3c\"> {temperatureC}°C</span>",
+    "tooltip": true
+  },
+  "network": {
+    "interval": 2,
+    "format-wifi": "直 {essid} ({signalStrength}%)",
+    "format-ethernet": " {ifname}",
+    "format-linked": " {ifname} (No IP)",
+    "format-disconnected": "睊",
+    "format-alt": " {bandwidthDownBits:7}  {bandwidthUpBits:7} ({ipaddr})",
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "{format_source} {icon} {volume}%",
+    "format-bluetooth": "{format_source} {icon} {volume}%",
+    "format-muted": "{format_source} ",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-icons": {
+      "hdmi": "﴿",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "headphone": "",
+      "hifi": ["蓼", "ﰝ"],
+      "default": ["", "", "墳", ""]
+    },
+    "on-click": "$VOLUME_CONTROL",
+    "on-click-right": "$DEFAULT_VOLUME_TOGGLE",
+    "on-scroll-up": "$DEFAULT_VOLUME_INC",
+    "on-scroll-down": "$DEFAULT_VOLUME_DEC",
+    "tooltip": false
+  }
+}
+
+// vim:ft=json
