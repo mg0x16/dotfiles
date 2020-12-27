@@ -1,0 +1,232 @@
+#========== Basic
+snippet imp
+import ${1:moduleName} from '${2:module}';$0
+endsnippet
+
+snippet imn
+import '${1:module}';$0
+endsnippet
+
+snippet imd
+import { $1 } from '${2:module}';$0
+endsnippet
+
+snippet ime
+import * as ${1:alias} from '${2:module}';$0
+endsnippet
+
+snippet ims
+import { ${1:originalName} as ${2:alias} } from '${3:module}';$0
+endsnippet
+
+snippet exp
+export default $1;$0
+endsnippet
+
+snippet exd
+export { $1 } from '${2:module}';$0
+endsnippet
+
+snippet exs
+export { ${1:originalName} as ${2:alias} } from '${3:module}';$0
+endsnippet
+
+snippet exf
+export const ${1:functionName} = (${2:params}) => {$0};
+endsnippet
+
+snippet edf
+export default (${1:params}) => {$0};
+endsnippet
+
+snippet met
+${1:methodName} = (${2:params}) => {$0}
+endsnippet
+
+snippet cons
+constructor($1) {
+  $0
+}
+endsnippet
+
+snippet get
+get ${1:propertyName} = () => {$0}
+endsnippet
+
+snippet set
+set ${1:propertyName} = (${2:value}) => {$0}
+endsnippet
+
+snippet fre
+${1:array}.forEach(${2:currentItem} => {$0});
+endsnippet
+
+snippet fof
+for(const ${1:item} of ${2:object}) {$0}
+endsnippet
+
+snippet fin
+for(const ${1:item} in ${2:object}) {$0}
+endsnippet
+
+snippet anfn
+(${1:params}) => {$2}$0
+endsnippet
+
+snippet sti
+setInterval(() => {$2}, ${1:intervalInMS});$0
+endsnippet
+
+snippet sto
+setTimeout(() => {$2}, ${1:delayInMS});$0
+endsnippet
+
+snippet prom
+return new Promise((resolve, reject) => {$1});$0
+endsnippet
+
+snippet al
+alert($1);$0
+endsnippet
+
+snippet cl
+console.log($1);$0
+endsnippet
+
+snippet todo
+// TODO: ${1:desc}, `!v strftime("%c")`$0
+endsnippet
+
+snippet fixme
+// FIXME: ${1:desc}, `!v strftime("%c")`$0
+endsnippet
+
+snippet esd
+// eslint-disable-next-line
+endsnippet
+
+#========== React, React Native
+
+snippet imr
+import React from 'react';$0
+endsnippet
+
+snippet imrc
+import React, { Component } from 'react';$0
+endsnippet
+
+snippet imrcp
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';$0
+endsnippet
+
+snippet rcc
+class ${1:componentName} extends Component {
+	render() {
+		return ($0);
+	}
+}
+endsnippet
+
+snippet rccd
+export default class ${1:componentName} extends Component {
+  render() {
+    return ($0);
+  }
+}
+endsnippet
+
+snippet rfc
+export default () => {
+  return ($0);
+}
+endsnippet
+
+snippet cwm
+componentWillMount = () => {$0}
+endsnippet
+
+snippet cdm
+componentDidMount = () => {$0}
+endsnippet
+
+snippet cwrp
+componentWillReceiveProps = (nextProps) => {$0}
+endsnippet
+
+snippet scu
+shouldComponentUpdate = (nextProps, nextState) => {$0}
+endsnippet
+
+snippet cwu
+componentWillUpdate = (nextProps, nextState) => {$0}
+endsnippet
+
+snippet cdu
+componentDidUpdate = (prevProps, prevState) => {$0}
+endsnippet
+
+snippet cwum
+componentWillUnmount = () => {$0}
+endsnippet
+
+#========== React PropTypes
+snippet pta
+PropTypes.array$0
+endsnippet
+
+snippet ptar
+PropTypes.array.isRequired$0
+endsnippet
+
+snippet ptb
+PropTypes.bool$0
+endsnippet
+
+snippet ptbr
+PropTypes.bool.isRequired$0
+endsnippet
+
+snippet ptf
+PropTypes.func$0
+endsnippet
+
+snippet ptfr
+PropTypes.func.isRequired$0
+endsnippet
+
+snippet ptn
+PropTypes.number$0
+endsnippet
+
+snippet ptnr
+PropTypes.number.isRequired$0
+endsnippet
+
+snippet pto
+PropTypes.object$0
+endsnippet
+
+snippet ptor
+PropTypes.object.isRequired$0
+endsnippet
+
+snippet pts
+PropTypes.string$0
+endsnippet
+
+snippet ptsr
+PropTypes.string.isRequired$0
+endsnippet
+
+snippet ptypes
+static propTypes = {
+  $0
+}
+endsnippet
+
+snippet dprop
+static defaultProps = {
+  $0
+}
+endsnippet

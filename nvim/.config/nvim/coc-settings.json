@@ -1,0 +1,20 @@
+{
+  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.errorSign": "✘",
+  "diagnostic.warningSign": "",
+  "suggest.snippetIndicator": "➤",
+  "eslint.autoFixOnSave": true,
+  "eslint.packageManager": "npm",
+  "prettier.trailingComma": "all",
+  "prettier.arrowParens": "avoid",
+  "lua.commandPath": "/usr/bin/luajit",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "rust",
+    "json",
+    "javascript",
+    "css",
+    "html",
+    "markdown",
+    "lua"
+  ]
+}

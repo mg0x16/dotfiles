@@ -1,0 +1,54 @@
+snippet html
+<!doctype html>
+<html lang="${1:en}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$2</title>
+</head>
+
+<body>
+  $0
+</body>
+</html>
+endsnippet
+
+snippet link
+<link rel="${1:stylesheet}" type="${2:text/css}" href="${3:main.css}">$0
+endsnippet
+
+snippet script
+<script type="${1:text/javascript}"${3: src="${2:main.js}"}>$0</script>
+endsnippet
+
+snippet d
+<${1:div}>$0</${1/(\w+).*/$1/}>
+endsnippet
+
+snippet s
+<${1:span}>$0</${1/(\w+).*/$1/}>
+endsnippet
+
+snippet cl
+class="$1"$0
+endsnippet
+
+snippet id
+id="$1"$0
+endsnippet
+
+snippet a
+<a href="${1:#}">$2</a>$0
+endsnippet
+
+snippet img
+<img src="$1" alt="$2">$0
+endsnippet
+
+snippet todo
+<!-- TODO: ${1:desc}, `!v strftime("%c")` -->$0
+endsnippet
+
+snippet fixme
+<!-- FIXME: ${1:desc}, `!v strftime("%c")` -->$0
+endsnippet
