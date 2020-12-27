@@ -1,0 +1,23 @@
+MAN_ORIG_EXEC=/usr/bin/man
+
+if [[ -z $1 ]]; then
+  echo 'What manual page do you want?'
+  return
+fi
+
+if [[ -z $2 ]]; then
+  $MAN_ORIG_EXEC "$1"
+  return
+fi
+
+if [ "$2" = 'exp' ]; then
+  $MAN_ORIG_EXEC -P "$PAGER -p \"^EXAMPLES?\"" "$1"
+else
+  if [ "${2[1]}" = '-' ] && [ "${2[2]}" != '-' ]; then
+    $MAN_ORIG_EXEC -P "$PAGER -p \"^ +$2\"" "$1"
+  else
+    $MAN_ORIG_EXEC -P "$PAGER -p \"$2\"" "$1"
+  fi
+fi
+
+# vim:ft=zsh
